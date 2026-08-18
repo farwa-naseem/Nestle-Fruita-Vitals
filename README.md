@@ -4,6 +4,18 @@ A front-end recreation of the Nestlé Fruita Vitals interactive product experien
 
 The project focuses on translating the original 1920×1080 design into a working website while keeping the visual layout, product positioning, transitions, and interactions close to the original design.
 
+Preview
+
+Main Flavour Screen:
+<img width="1919" height="954" alt="image" src="https://github.com/user-attachments/assets/0659fa68-ff75-423a-b402-2b55b13adfe0" />
+
+Product Details
+<img width="1919" height="940" alt="image" src="https://github.com/user-attachments/assets/a6a0cdbc-ec1d-4b66-a868-5082a4a79788" />
+
+
+
+
+
 Features
 
 * Four interactive flavour states
