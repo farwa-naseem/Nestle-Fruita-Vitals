@@ -79,24 +79,26 @@ The animations were recreated from the states and transitions in the original Fi
 
 Project Structure
 
+## Project Structure
+
+```text
 nestle-fruita-vitals/
-│
 ├── index.html
 ├── style.css
 ├── script.js
 ├── jsconfig.json
-│
 └── assets/
     ├── css/
-    │   └── sections/
+    ├── sections/
     ├── js/
     ├── fonts/
     ├── products/
-    ├── decor/
-    ├── icons/
-    ├── features/
-    ├── splash/
-    └── splash-liquid/
+    └── decor/
+        ├── icons/
+        ├── features/
+        └── splash/
+            └── splash-liquid/
+```
 
 The JavaScript is organized into separate files for data, state management, animations, components and utilities.
 
