@@ -1,0 +1,63 @@
+/* =============================================================================
+   NESTLÉ FRUITA VITALS — stylesheet entry point
+
+   This file contains NO rules of its own. It is an import manifest, so that
+   changing one section means editing one small file rather than scrolling a
+   2500-line stylesheet.
+
+   Import order matters: tokens must land before anything that reads them.
+
+   ---------------------------------------------------------------------------
+   IF STYLES DO NOT LOAD WHEN OPENING index.html DIRECTLY FROM DISK
+
+   CSS @import is reliable over file:// in Chrome, but if you ever see an
+   unstyled page when double-clicking index.html (and it looks correct under
+   Live Server), the fallback is to delete every @import below and add one
+   <link rel="stylesheet"> per file to index.html instead, in this same order.
+   Identical result, slightly more verbose.
+   ============================================================================= */
+
+/* -----------------------------------------------------------------------------
+   FONTS
+   Nine self-hosted woff2 faces in assets/fonts/. No CDN, no npm, works offline.
+
+   If your headings render in a system font when opening from file:// but look
+   correct under Live Server, Chrome is blocking the font requests because a
+   local file has an opaque origin. Swap the two lines below — the embedded
+   version inlines the identical fonts as base64 and cannot be blocked.
+   ----------------------------------------------------------------------------- */
+/* The embedded file contains the identical nine WOFF2 faces and also works
+   when this standalone project is opened directly from file:// in Chrome. */
+@import url("assets/css/fonts-embedded.css");
+
+/* -----------------------------------------------------------------------------
+   FOUNDATION
+   ----------------------------------------------------------------------------- */
+@import url("assets/css/tokens.css"); /* every colour, size, radius, easing */
+@import url("assets/css/reset.css");
+@import url("assets/css/stage.css"); /* the 1920x1080 proportional stage    */
+
+/* -----------------------------------------------------------------------------
+   SECTIONS
+   Each file is an empty Part A placeholder. They are imported now so that
+   filling one in during a later stage requires no wiring — just write the CSS.
+
+   Order follows the approved build sequence, back to front, so later sections
+   naturally win specificity ties against earlier ones.
+   ----------------------------------------------------------------------------- */
+@import url("assets/css/sections/background.css?v=2");
+@import url("assets/css/sections/big-text.css");
+@import url("assets/css/sections/decor.css?v=2");
+@import url("assets/css/sections/product.css");
+@import url("assets/css/sections/headings.css");
+@import url("assets/css/sections/description.css");
+@import url("assets/css/sections/nav-progress.css");
+@import url("assets/css/sections/thumb-rail.css");
+@import url("assets/css/sections/arrows.css");
+@import url("assets/css/sections/header.css");
+@import url("assets/css/sections/details.css");
+
+@import url("assets/css/sections/splash.css");
+
+/* Final layout-only pass for the fitted full-viewport composition. */
+@import url("assets/css/layout.fullscreen.css");

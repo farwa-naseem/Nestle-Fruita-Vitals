@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="en" data-view="splash1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nestlé Fruita Vitals</title>
+    <meta
+      name="description"
+      content="Nestlé Fruita Vitals — an interactive flavour experience."
+    />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+    <!-- One stylesheet entry point. It @imports the partials in assets/css/. -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!--
+      VIEWPORT CONTINUATION
+      The authored 1920x1080 stage is deliberately shown slightly smaller
+      than the browser viewport. These pointer-inert copies continue only the
+      flavour foundations, circular fields and big-text conveyor into the
+      exposed viewport area. The real stage remains above them and unchanged.
+    -->
+    <div class="viewport-background" aria-hidden="true">
+      <div class="viewport-background__base viewport-background__base--orange"></div>
+      <div class="viewport-background__base viewport-background__base--apple"></div>
+      <div class="viewport-background__base viewport-background__base--chaunsa"></div>
+      <div class="viewport-background__base viewport-background__base--grape"></div>
+
+      <div class="viewport-background__orb viewport-background__orb--orange"></div>
+      <div class="viewport-background__orb viewport-background__orb--apple"></div>
+      <div class="viewport-background__orb viewport-background__orb--chaunsa"></div>
+      <div class="viewport-background__orb viewport-background__orb--grape"></div>
+      <div class="viewport-background__glow viewport-background__glow--orange"></div>
+      <div class="viewport-background__glow viewport-background__glow--apple"></div>
+      <div class="viewport-background__glow viewport-background__glow--chaunsa"></div>
+      <div class="viewport-background__glow viewport-background__glow--grape"></div>
+      <div class="viewport-background__details-glow"></div>
+
+      <div class="viewport-background__canvas">
+        <div class="viewport-background__field viewport-background__field--orange"></div>
+        <div class="viewport-background__field viewport-background__field--apple"></div>
+        <div class="viewport-background__field viewport-background__field--chaunsa"></div>
+        <div class="viewport-background__field viewport-background__field--grape"></div>
+
+        <div class="viewport-background__halo viewport-background__halo--orange"></div>
+        <div class="viewport-background__halo viewport-background__halo--apple"></div>
+        <div class="viewport-background__halo viewport-background__halo--chaunsa"></div>
+        <div class="viewport-background__halo viewport-background__halo--grape"></div>
+
+        <div class="viewport-background__words">
+          <span class="viewport-background__word viewport-background__word--active">FRUITA VITALS</span>
+          <span class="viewport-background__word viewport-background__word--staged">FRUITA VITALS</span>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      THE STAGE
+      One 1920x1080 art-directed surface. Every screen in the Figma file is a
+      state of this single stage — there is no scrolling, no routing and no
+      second page.
+
+      Part A intentionally leaves this empty. Sections are mounted here from
+      stage 5 of the roadmap onwards.
+    -->
+    <div id="stage" class="stage" aria-live="polite">
+      <div id="stage-content" class="stage__content">
+        <!--
+          BACKGROUND — orange hero, verified against Figma frame 18:3.
+          See assets/css/sections/background.css for the full layer table
+          and the corner-glow / product-shadow exclusion notes.
+        -->
+        <div class="background" aria-hidden="true">
+          <div class="background__base background__base--orange"></div>
+          <div class="background__base background__base--apple"></div>
+          <div class="background__base background__base--chaunsa"></div>
+          <div class="background__base background__base--grape"></div>
+          <div class="background__field background__field--apple"></div>
+          <div class="background__field background__field--chaunsa"></div>
+          <div class="background__field background__field--grape"></div>
+          <div class="background__field background__field--orange"></div>
+          <div class="background__halo background__halo--apple"></div>
+          <div class="background__halo background__halo--chaunsa"></div>
+          <div class="background__halo background__halo--grape"></div>
+          <div class="background__halo background__halo--orange"></div>
+          <div class="background__orb background__orb--orange"></div>
+          <div class="background__orb background__orb--apple"></div>
+          <div class="background__orb background__orb--chaunsa"></div>
+          <div class="background__orb background__orb--grape"></div>
+          <div class="background__glow background__glow--orange"></div>
+          <div class="background__glow background__glow--apple"></div>
+          <div class="background__glow background__glow--chaunsa"></div>
+          <div class="background__glow background__glow--grape"></div>
+        </div>
+
+        <!--
+          HEADER — orange hero, verified against Figma node 18:10.
+          Static: zero prototype reactions on every node (Phase 1 decision 8).
+          See assets/css/sections/header.css for the full position table.
+        -->
+        <header class="header">
+          <nav class="header__nav-icons" aria-label="Site">
+            <button type="button" class="header__icon-btn" aria-label="Menu">
+              <img src="assets/icons/icon-menu.svg" alt="" />
+            </button>
+            <button type="button" class="header__icon-btn" aria-label="Search">
+              <img src="assets/icons/icon-search.svg" alt="" />
+            </button>
+            <button type="button" class="header__icon-btn" aria-label="Bag">
+              <img src="assets/icons/icon-bag.svg" alt="" />
+            </button>
+          </nav>
+
+          <div class="header__logo">
+            <div class="header__logo-badge">
+              <picture>
+                <source srcset="assets/icons/nestle-logo-mark.webp" type="image/webp" />
+                <img src="assets/icons/nestle-logo-mark.png" alt="" />
+              </picture>
+            </div>
+            <span class="header__wordmark">Nestlé Fruita Vitals</span>
+          </div>
+
+          <button type="button" class="header__shop-now">
+            <span class="header__shop-now-badge">
+              <img src="assets/icons/icon-arrow-diagonal.svg" alt="" />
+            </span>
+            <span class="header__shop-now-label">SHOP NOW</span>
+          </button>
+        </header>
+
+        <!--
+          BIG TEXT — verified against Figma node 18:22.
+          Only "active" (orange) and "staged" (apple, opacity 0) exist on
+          this frame — no "prev" slot, since orange is flavour index 0.
+        -->
+        <div class="big-text" aria-hidden="true">
+          <span class="big-text__word big-text__word--active">FRUITA VITALS</span>
+          <span class="big-text__word big-text__word--staged">FRUITA VITALS</span>
+        </div>
+
+        <!--
+          DECOR + ARROWS — verified against Figma node 18:24 ("orange elements").
+          Both share one z-layer, matching Figma's own grouping.
+        -->
+        <div class="decor" aria-hidden="true">
+          <div class="decor__set decor__set--orange">
+            <img
+              class="decor__piece decor__piece--orange-cluster-upper-left"
+              src="assets/decor/decor-orange.webp?v=2"
+              alt=""
+            />
+            <img
+              class="decor__piece decor__piece--orange-cluster-lower-right"
+              src="assets/decor/decor-orange.webp?v=2"
+              alt=""
+            />
+            <img
+              class="decor__piece decor__piece--orange-accent-small-1"
+              src="assets/decor/decor-leaf.webp"
+              alt=""
+            />
+            <img
+              class="decor__piece decor__piece--orange-accent-small-2"
+              src="assets/decor/decor-leaf.webp"
+              alt=""
+            />
+          </div>
+
+          <div class="decor__set decor__set--apple">
+            <img class="decor__piece decor__piece--apple-accent-1" src="assets/decor/decor-apple.webp" alt="" />
+            <img class="decor__piece decor__piece--apple-accent-2" src="assets/decor/decor-apple.webp" alt="" />
+            <img class="decor__piece decor__piece--apple-leaf-1" src="assets/decor/decor-leaf.webp" alt="" />
+            <img class="decor__piece decor__piece--apple-leaf-2" src="assets/decor/decor-leaf.webp" alt="" />
+          </div>
+
+          <div class="decor__set decor__set--chaunsa">
+            <img class="decor__piece decor__piece--chaunsa-leaf" src="assets/decor/decor-leaf.webp" alt="" />
+            <img class="decor__piece decor__piece--chaunsa-leaf-2" src="assets/decor/decor-leaf.webp" alt="" />
+            <img class="decor__piece decor__piece--chaunsa-accent-1" src="assets/decor/decor-mango.webp" alt="" />
+            <img class="decor__piece decor__piece--chaunsa-accent-2" src="assets/decor/decor-mango.webp" alt="" />
+          </div>
+
+          <div class="decor__set decor__set--grape">
+            <img class="decor__piece decor__piece--grape-cluster" src="assets/decor/decor-grape.webp" alt="" />
+            <img class="decor__piece decor__piece--grape-accent" src="assets/decor/decor-grape.webp" alt="" />
+            <img class="decor__piece decor__piece--grape-leaf" src="assets/decor/decor-leaf.webp" alt="" />
+            <img class="decor__piece decor__piece--grape-leaf-2" src="assets/decor/decor-leaf.webp" alt="" />
+          </div>
+        </div>
+
+        <nav class="arrows" aria-label="Flavour navigation">
+          <button type="button" class="arrow-btn arrow-btn--left" aria-label="Previous flavour">
+            <img class="arrow-btn__blob" src="assets/icons/arrow-blob-left.svg" alt="" />
+            <img class="arrow-btn__chevron" src="assets/icons/icon-chevron.svg" alt="" />
+            <span class="arrow-btn__line"></span>
+          </button>
+          <button type="button" class="arrow-btn arrow-btn--right" aria-label="Next flavour">
+            <img class="arrow-btn__blob" src="assets/icons/arrow-blob-right.svg" alt="" />
+            <img class="arrow-btn__chevron" src="assets/icons/icon-chevron.svg" alt="" />
+            <span class="arrow-btn__line"></span>
+          </button>
+        </nav>
+
+        <!--
+          PRODUCT BOTTLE STACK — verified against Figma node 18:3 (direct
+          children). Only orange is visible; the other three are parked at
+          opacity 0, ready for the flavour-change animation stage.
+        -->
+        <div class="product-stack" aria-hidden="true">
+          <picture>
+            <source srcset="assets/products/product-orange.webp" type="image/webp" />
+            <img
+              class="product-stack__bottle product-stack__bottle--orange"
+              src="assets/products/product-orange.png"
+              alt=""
+            />
+          </picture>
+          <picture>
+            <source srcset="assets/products/product-apple.webp" type="image/webp" />
+            <img
+              class="product-stack__bottle product-stack__bottle--apple"
+              src="assets/products/product-apple.png"
+              alt=""
+            />
+          </picture>
+          <picture>
+            <source srcset="assets/products/product-mango.webp" type="image/webp" />
+            <img
+              class="product-stack__bottle product-stack__bottle--mango"
+              src="assets/products/product-mango.png"
+              alt=""
+            />
+          </picture>
+          <picture>
+            <source srcset="assets/products/product-grape.webp" type="image/webp" />
+            <img
+              class="product-stack__bottle product-stack__bottle--grape"
+              src="assets/products/product-grape.png"
+              alt=""
+            />
+          </picture>
+        </div>
+
+        <!--
+          HEADINGS — verified against Figma node 40:4 ("heading-content-orange").
+        -->
+        <div class="headings" aria-hidden="true">
+          <div class="headings__content headings__content--orange">
+            <span class="headings__eyebrow">NEW FLAVOR</span>
+            <span class="headings__title">ORANGE</span>
+            <div class="headings__cta">
+              <div class="headings__shop-now">
+                <span class="headings__shop-now-badge">
+                  <img src="assets/icons/icon-arrow-diagonal.svg" alt="" />
+                </span>
+                <span class="headings__shop-now-label">SHOP NOW</span>
+              </div>
+              <div class="headings__price">
+                <span class="headings__price-label">Rs. 480</span>
+              </div>
+            </div>
+          </div>
+          <div class="headings__content headings__content--apple">
+            <span class="headings__eyebrow">NEW FLAVOR</span>
+            <span class="headings__title">APPLE NECTAR</span>
+            <div class="headings__cta">
+              <div class="headings__shop-now">
+                <span class="headings__shop-now-badge">
+                  <img src="assets/icons/icon-arrow-diagonal.svg" alt="" />
+                </span>
+                <span class="headings__shop-now-label">SHOP NOW</span>
+              </div>
+              <div class="headings__price">
+                <span class="headings__price-label">Rs. 480</span>
+              </div>
+            </div>
+          </div>
+          <div class="headings__content headings__content--chaunsa">
+            <span class="headings__eyebrow">NEW FLAVOR</span>
+            <span class="headings__title">CHAUNSA</span>
+            <div class="headings__cta">
+              <div class="headings__shop-now">
+                <span class="headings__shop-now-badge">
+                  <img src="assets/icons/icon-arrow-diagonal.svg" alt="" />
+                </span>
+                <span class="headings__shop-now-label">SHOP NOW</span>
+              </div>
+              <div class="headings__price">
+                <span class="headings__price-label">Rs. 480</span>
+              </div>
+            </div>
+          </div>
+          <div class="headings__content headings__content--grape">
+            <span class="headings__eyebrow">NEW FLAVOR</span>
+            <span class="headings__title">RED GRAPE</span>
+            <div class="headings__cta">
+              <div class="headings__shop-now">
+                <span class="headings__shop-now-badge">
+                  <img src="assets/icons/icon-arrow-diagonal.svg" alt="" />
+                </span>
+                <span class="headings__shop-now-label">SHOP NOW</span>
+              </div>
+              <div class="headings__price">
+                <span class="headings__price-label">Rs. 480</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--
+          DESCRIPTION — verified against Figma node 41:10
+          ("description-content-orange").
+        -->
+        <div class="description" aria-hidden="true">
+          <div class="description__divider"></div>
+          <div class="description__content description__content--orange">
+            <span class="description__label">ABOUT THIS FLAVOR</span>
+            <p class="description__body">
+              Refreshing orange juice made from succulent oranges, with a
+              naturally tangy and refreshing taste. Less than 100 kcal per
+              serving, no added sugar.
+            </p>
+          </div>
+          <div class="description__content description__content--apple">
+            <span class="description__label">ABOUT THIS FLAVOR</span>
+            <p class="description__body">
+              A refreshing apple nectar with a smooth fruity taste, reduced
+              calories, and Vitamin C. Smooth and refreshing apple nectar with
+              a delicious fruity taste.
+            </p>
+          </div>
+          <div class="description__content description__content--chaunsa">
+            <span class="description__label">ABOUT THIS FLAVOR</span>
+            <p class="description__body">
+              A luscious mango nectar made with Chaunsa mango, bringing a rich
+              and sweet tropical flavour. Rich and luscious Chaunsa mango
+              nectar with a naturally tropical flavour.
+            </p>
+          </div>
+          <div class="description__content description__content--grape">
+            <span class="description__label">ABOUT THIS FLAVOR</span>
+            <p class="description__body">
+              A refreshing red grape fruit drink with an exquisite fruity
+              taste. A refreshing red grape drink with a rich and fruity
+              flavour.
+            </p>
+          </div>
+        </div>
+
+        <!--
+          PROGRESS NAV — verified against Figma node 18:35 ("navigation").
+          Rotated elements positioned via true centre + unrotated size,
+          same method as the decor pieces.
+        -->
+        <div class="nav-progress" aria-hidden="true">
+          <div class="nav-progress__track"></div>
+          <div class="nav-progress__active"></div>
+          <span class="nav-progress__index nav-progress__index--active nav-progress__index-flavor--orange">01</span>
+          <span class="nav-progress__index nav-progress__index--active nav-progress__index-flavor--apple">02</span>
+          <span class="nav-progress__index nav-progress__index--active nav-progress__index-flavor--chaunsa">03</span>
+          <span class="nav-progress__index nav-progress__index--active nav-progress__index-flavor--grape">04</span>
+          <span class="nav-progress__index nav-progress__index--total">04</span>
+        </div>
+
+        <!--
+          THUMBNAIL RAIL — verified against Figma node 18:44 ("drink variation").
+          No click behaviour yet — lands with the flavour-change interactions batch.
+        -->
+        <div class="thumb-rail" aria-label="Flavour thumbnails">
+          <button
+            type="button"
+            class="thumb-rail__item thumb-rail__item--orange"
+            aria-label="Orange"
+          >
+            <picture>
+              <source srcset="assets/products/product-orange.webp" type="image/webp" />
+              <img src="assets/products/product-orange.png" alt="" />
+            </picture>
+          </button>
+          <button type="button" class="thumb-rail__item thumb-rail__item--apple" aria-label="Apple Nectar">
+            <picture>
+              <source srcset="assets/products/product-apple.webp" type="image/webp" />
+              <img src="assets/products/product-apple.png" alt="" />
+            </picture>
+          </button>
+          <button type="button" class="thumb-rail__item thumb-rail__item--mango" aria-label="Chaunsa">
+            <picture>
+              <source srcset="assets/products/product-mango.webp" type="image/webp" />
+              <img src="assets/products/product-mango.png" alt="" />
+            </picture>
+          </button>
+          <button type="button" class="thumb-rail__item thumb-rail__item--grape" aria-label="Red Grape">
+            <picture>
+              <source srcset="assets/products/product-grape.webp" type="image/webp" />
+              <img src="assets/products/product-grape.png" alt="" />
+            </picture>
+          </button>
+        </div>
+
+        <!--
+          DETAILS — Figma frame 58:2 ("details"), 1920x1080.
+          Figma authors one Orange-only details state. It remains a state of
+          this same stage rather than a routed document, so the shared header
+          stays mounted and the selected hero flavour can be restored exactly.
+        -->
+        <section class="details-view" aria-label="Orange product details" aria-hidden="true">
+          <div class="details-view__background" aria-hidden="true">
+            <div class="details-view__glow"></div>
+          </div>
+
+          <div class="details-view__liquid" aria-hidden="true">
+            <span class="details-view__liquid-back"></span>
+            <span class="details-view__liquid-front"></span>
+          </div>
+
+          <div class="details-view__decor" aria-hidden="true">
+            <span class="details-view__decor-box details-view__decor-box--one">
+              <picture><source srcset="assets/decor/decor-orange.webp" type="image/webp" /><img src="assets/decor/decor-orange.png" alt="" /></picture>
+            </span>
+            <span class="details-view__decor-box details-view__decor-box--two">
+              <picture><source srcset="assets/decor/decor-orange.webp" type="image/webp" /><img src="assets/decor/decor-orange.png" alt="" /></picture>
+            </span>
+            <span class="details-view__decor-box details-view__decor-box--three">
+              <picture><source srcset="assets/decor/decor-orange.webp" type="image/webp" /><img src="assets/decor/decor-orange.png" alt="" /></picture>
+            </span>
+          </div>
+
+          <div class="details-view__product-shadow" aria-hidden="true"></div>
+          <picture class="details-view__product" aria-hidden="true">
+            <source srcset="assets/products/product-orange.webp" type="image/webp" />
+            <img src="assets/products/product-orange.png" alt="" />
+          </picture>
+
+          <div class="details-view__headings">
+            <span class="details-view__eyebrow">NEW FLAVOR</span>
+            <h1 class="details-view__title">ORANGE</h1>
+          </div>
+
+          <div class="details-view__description">
+            <div class="details-view__description-divider"></div>
+            <div class="details-view__description-copy">
+              <span class="details-view__description-label">ABOUT THIS FLAVOR</span>
+              <p class="details-view__description-body">
+                Refreshing orange juice made from succulent oranges, with a
+                naturally tangy and refreshing taste. Less than 100 kcal per
+                serving, no added sugar.
+              </p>
+            </div>
+          </div>
+
+          <p class="details-view__price">Rs. 480</p>
+
+          <div class="details-view__purchase">
+            <div class="details-view__quantity" aria-label="Quantity">
+              <button type="button" class="details-view__quantity-btn details-view__quantity-btn--minus" aria-label="Decrease quantity">−</button>
+              <span class="details-view__quantity-value">1</span>
+              <button type="button" class="details-view__quantity-btn details-view__quantity-btn--plus" aria-label="Increase quantity">+</button>
+            </div>
+            <button type="button" class="details-view__add-cart">ADD TO CART</button>
+          </div>
+
+          <div class="details-view__features">
+            <article class="details-view__feature-card">
+              <picture><source srcset="assets/features/feature-1-orange-juice.webp" type="image/webp" /><img src="assets/features/feature-1-orange-juice.png" alt="" /></picture>
+              <p>100% Orange Juice</p>
+            </article>
+            <article class="details-view__feature-card">
+              <picture><source srcset="assets/features/feature-2-tangy.webp" type="image/webp" /><img src="assets/features/feature-2-tangy.png" alt="" /></picture>
+              <p>Naturally Tangy</p>
+            </article>
+            <article class="details-view__feature-card">
+              <picture><source srcset="assets/features/feature-3-no-sugar.webp" type="image/webp" /><img src="assets/features/feature-3-no-sugar.png" alt="" /></picture>
+              <p>No Added Sugar</p>
+            </article>
+            <article class="details-view__feature-card">
+              <picture><source srcset="assets/features/feature-4-kcal.webp" type="image/webp" /><img src="assets/features/feature-4-kcal.png" alt="" /></picture>
+              <p>Under 100 kcal</p>
+            </article>
+          </div>
+
+          <button type="button" class="details-view__back">
+            <img src="assets/icons/icon-back-arrow.svg" alt="" />
+            <span>BACK TO FLAVORS</span>
+          </button>
+        </section>
+
+      </div>
+    </div>
+
+    <!--
+      SPLASH PROTOTYPE — Figma frames 80:2 (splash-1) and 116:3 (splash-2).
+      This viewport-level overlay deliberately sits outside the approved 92%
+      hero stage. Its inner canvas remains an exact 1920x1080 coordinate
+      system and is scaled as one centred, clipped unit to cover the browser.
+    -->
+    <section class="splash-screen" aria-label="Nestlé Fruita Vitals loading screen" data-node-id="80:2" data-splash-state="splash-1">
+      <!-- Background uses COVER so every browser pixel is painted. -->
+      <div class="splash-screen__background-canvas" aria-hidden="true">
+        <div class="splash-screen__background" aria-hidden="true">
+          <div class="splash-screen__backdrop"></div>
+          <div class="splash-screen__tint"></div>
+          <img class="splash-screen__cones" src="assets/splash/splash-cone-shapes.svg" alt="" />
+        </div>
+      </div>
+
+      <!-- Foreground uses FIT so Figma's y=980 loading node is never cropped
+           by a short/wide browser viewport. Coordinates remain 1920x1080. -->
+      <div class="splash-screen__content-canvas">
+        <div class="splash-screen__logo" aria-label="Nestlé Fruita Vitals" data-node-id="81:3">
+          <div class="splash-screen__logo-copy" data-node-id="84:2">
+            <span class="splash-screen__nestle">Nestlé</span>
+            <span class="splash-screen__vitals">FRUITA VITALS</span>
+          </div>
+        </div>
+
+        <p class="splash-screen__loading" data-node-id="116:2" role="status">loading...</p>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SCRIPTS
+
+         These are CLASSIC scripts, deliberately NOT type="module".
+
+         Chrome blocks ES modules over file:// — a local file has an opaque
+         origin, so every import fails its CORS check. Classic scripts are
+         exempt, which is what lets you double-click this file and have it
+         work. The cost is that we wire files together through the window.NFV
+         namespace instead of import/export.
+
+         LOAD ORDER MATTERS. Dependencies first, boot last.
+         ===================================================================== -->
+
+    <!-- 1. Vendored GSAP. Not a CDN, so it works offline and from file://.
+            CustomEase and Observer must come after the core. -->
+    <script src="assets/vendor/gsap/gsap.min.js"></script>
+    <script src="assets/vendor/gsap/CustomEase.min.js"></script>
+    <script src="assets/vendor/gsap/Observer.min.js"></script>
+
+    <!-- 2. Namespace. Must be first of our own files. -->
+    <script src="assets/js/namespace.js"></script>
+
+    <!-- 3. Data and state. No DOM access, no dependencies beyond namespace. -->
+    <script src="assets/js/data.flavors.js"></script>
+    <script src="assets/js/data.positions.js"></script>
+    <script src="assets/js/state.store.js"></script>
+
+    <!-- 4. Animation layer. easings.js registers the two Figma curves. -->
+    <script src="assets/js/animation.easings.js"></script>
+    <script src="assets/js/animation.reducedMotion.js"></script>
+    <script src="assets/js/animation.flavorTransition.js"></script>
+    <script src="assets/js/animation.detailsTransition.js"></script>
+    <script src="assets/js/animation.splashSequence.js"></script>
+
+    <!-- 5. Utilities. -->
+    <script src="assets/js/lib.preload.js"></script>
+    <script src="assets/js/lib.observer.js"></script>
+
+    <!-- 6. Section components. All empty placeholders until stage 5+. -->
+    <script src="assets/js/components.Background.js"></script>
+    <script src="assets/js/components.BigText.js"></script>
+    <script src="assets/js/components.DecorLayer.js"></script>
+    <script src="assets/js/components.ProductStack.js"></script>
+    <script src="assets/js/components.HeadingRoll.js"></script>
+    <script src="assets/js/components.DescriptionRoll.js"></script>
+    <script src="assets/js/components.ProgressNav.js"></script>
+    <script src="assets/js/components.ThumbRail.js"></script>
+    <script src="assets/js/components.ArrowControls.js"></script>
+    <script src="assets/js/components.Header.js"></script>
+    <script src="assets/js/components.DetailsPanel.js"></script>
+    <script src="assets/js/components.Splash.js"></script>
+
+    <!-- 7. Development tooling. Inert unless on localhost or file://.
+            Add ?dev=0 to the URL to force it off. -->
+    <script src="assets/js/dev.figma-overlay.js"></script>
+
+    <!-- 8. Boot. Must be last. -->
+    <script src="script.js"></script>
+  </body>
+</html>
